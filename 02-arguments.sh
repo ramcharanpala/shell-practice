@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #arguments
-$PERSON1="$1"
-$PERSON2="$2"
+PERSON1=$1
+PERSON2=$2
 
 echo "$PERSON1:: hi how are you $PERSON2"
 echo "$PERSON2:: i am fine $PERSON1,what about you"
