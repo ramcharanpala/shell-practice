@@ -6,7 +6,7 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
-validation() {
+VALIDATION() {
     if [ $1 -ne 0 ]; then
         echo "$2 installation failed."
         exit 1
@@ -14,13 +14,5 @@ validation() {
         echo "$2 installation successful."
     fi
 }
-
 dnf install mysql -y
-validation $? "MySQL"
-
-dnf install nginx -y
-validation $? "Nginx"
-
-dnf install python3 -y
-validation $? "Python3"
-
+VALIDATION $? "MySQL"
