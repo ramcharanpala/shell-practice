@@ -2,11 +2,11 @@
 
 USERID=$(id -u)
 if [ $USERID -ne 0 ]; then
-    echo "This script must be run as root."
+    echo "ERROR: This script must be run as root."
     exit 1
 fi
 
-VALIDATION() {
+validation() {
     if [ $1 -ne 0 ]; then
         echo "$2 installation failed."
         exit 1
@@ -14,5 +14,13 @@ VALIDATION() {
         echo "$2 installation successful."
     fi
 }
+
 dnf install mysql -y
-VALIDATION $? "MySQL"
+validation $? "MySQL"
+
+dnf install nginx -y
+validation $? "Nginx"
+
+dnf install python3 -y
+validation $? "Python3"
+
