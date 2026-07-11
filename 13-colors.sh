@@ -3,7 +3,7 @@
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
-y="\e[33m"
+Y="\e[33m"
 N="\e[0m"
 if [ $USERID -ne 0 ]; then
     echo -e "${R}ERROR: This script must be run as root.${N}"
